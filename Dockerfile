@@ -22,7 +22,7 @@ RUN curl -o ~/miniconda.sh -O  https://repo.anaconda.com/miniconda/Miniconda3-la
 ENV PATH /opt/conda/bin:$PATH
 
 # Install base conda environment with cuda support
-RUN conda tos accept && conda config --set always_yes yes --set changeps1 no && conda update -q conda
+RUN conda tos accept && conda config --set always_yes yes --set changeps1 no && conda update -q conda && conda install python=3.11
 
 # Upgrade pip and install remaining dependencies
 RUN python3 -m pip install --upgrade pip
